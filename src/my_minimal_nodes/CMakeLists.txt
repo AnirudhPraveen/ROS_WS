@@ -132,7 +132,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable($my_minimal_nodes src/minimal_publisher.cpp)
+add_executable(my_minimal_publisher src/minimal_publisher.cpp)
+add_executable(my_minimal_subscriber src/minimal_publisher.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -145,10 +146,12 @@ add_executable($my_minimal_nodes src/minimal_publisher.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries($my_minimal_publisher
+target_link_libraries(my_minimal_publisher
    ${catkin_LIBRARIES}
  )
-
+target_link_libraries(my_minimal_subscriber
+    ${catkin_LIBRARIES}
+ )
 #############
 ## Install ##
 #############

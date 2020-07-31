@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     std_msgs::Float64 input_float;
 
     // set the sleep timer for 1Hz repetition rate (arg is in units of Hz)
-    ros::Rate naptime(1.0)
+    ros::Rate naptime(1.0);
     input_float.data = 0.0;
 
     while (ros::ok()) {
